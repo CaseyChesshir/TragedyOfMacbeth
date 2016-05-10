@@ -1,0 +1,30 @@
+all: TragedyOfMacbeth.o Act1.o Act2.o Act3.o Act4.o Act5.o Character.o jsoncpp.o 
+	g++ -o TragedyOfMacbeth objects/*.o 
+TragedyOfMacbeth.o: src/TragedyOfMacbeth.cpp
+	g++ -c -I. src/TragedyOfMacbeth.cpp src/Act*.cpp
+	mv TragedyOfMacbeth.o objects/TragedyOfMacbeth.o
+Act1.o: src/Act1.cpp src/Act1.hpp
+	g++ -c -I. src/Act1.cpp
+	mv Act1.o objects/Act1.o
+Act2.o: src/Act2.cpp src/Act2.hpp
+	g++ -c -I. src/Act2.cpp
+	mv Act2.o objects/Act2.o
+Act3.o: src/Act3.cpp src/Act3.hpp
+	g++ -c -I. src/Act3.cpp
+	mv Act3.o objects/Act3.o
+Act4.o: src/Act4.cpp src/Act4.hpp
+	g++ -c -I. src/Act4.cpp
+	mv Act4.o objects/Act4.o
+Act5.o: src/Act5.cpp src/Act5.hpp
+	g++ -c -I. src/Act5.cpp
+	mv Act5.o objects/Act5.o
+Character.o: src/Character.cpp src/Character.hpp
+	g++ -c -I. src/Character.cpp
+	mv Character.o objects/Character.o
+jsoncpp.o: src/jsoncpp.cpp json/*
+	g++ -c -I. src/jsoncpp.cpp
+	mv jsoncpp.o objects/jsoncpp.o
+run:
+	./TragedyOfMacbeth
+clean:
+	rm objects*.o TragedyOfMacbeth
