@@ -1,5 +1,8 @@
-#ifndef THANE_HPP_
-#define THANE_HPP_
+#ifndef KINGDOM_HPP_ 
+#define KINGDOM_HPP_ 
+#include "King.hpp"
+#include "Queen.hpp"
+#include "Thane.hpp"
 
 #include <vector>
 
@@ -8,6 +11,5 @@ class Kingdom{
 		King king;
 		Queen queen;
 		std::vector<Thane> thanes;
-		Army army;
 };
 #endif
