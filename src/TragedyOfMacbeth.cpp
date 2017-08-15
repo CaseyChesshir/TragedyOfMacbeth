@@ -22,7 +22,8 @@ int main(){
     filebuf fb;
     fb.open("working.json", ios::in);
     istream is(&fb);
-    
+
+	cout << "initialized, beginning to parse" << endl;
     
     bool parsingSuccessful = reader.parse( is, root );
     
@@ -33,6 +34,8 @@ int main(){
         << reader.getFormattedErrorMessages();
         return 1;
     }
+
+	cout << "parsed successfully, creating Characters" << endl;
     
     
     const Json::Value &val = root[0];
@@ -78,6 +81,8 @@ int main(){
     Character *macduff = new Character("MACDUFF", macduffLines);
     
     vector<pair<string,string>> EntirePlayLines;
+
+	cout << "Characters created. Beginning json iteration" << endl;
     
     for (Json::ValueConstIterator it = root.begin(); it != root.end(); ++it){
         const Json::Value &temp = *it;
@@ -95,7 +100,7 @@ int main(){
     string currentspeaker = "";
     
     
-    cout << "Beginning simulation " << endl;
+    cout << "json iteration complete. Beginning simulation " << endl;
     
     
     for(vector<pair<string,string>>::const_iterator i = EntirePlayLines.begin(); i != EntirePlayLines.end(); ++i){
@@ -106,11 +111,7 @@ int main(){
         os << "  " << (*i).second << endl;
     }
     
-    cout << endl;
-    
-    
-    
-    
-    cout << "about to return" << endl;
+    cout << "simulation written to output.txt. about to return" << endl;
+
     return 0;
 }
