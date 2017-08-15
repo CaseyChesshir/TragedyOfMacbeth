@@ -5,7 +5,7 @@ TragedyOfMacbeth: $(OBJ_FILES)
 	g++ -o $@ $(OBJ_FILES) -std=c++11
 
 obj/%.o: src/%.cpp
-	g++ -c -o $@ $< -std=c++11
+	g++ -c $< -o $@ -std=c++11
 
 clean:
 	rm obj/* TragedyOfMacbeth
