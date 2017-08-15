@@ -4,10 +4,13 @@
 #include <locale>
 
 Character::Character(string name, std::vector<string> &playlines){
+
 	ofWomanBorn = true;
+
 	if (name.compare("MACDUFF") == 0){
 		ofWomanBorn = false;
 	}
+
 	std::locale loc;
 	std::vector<string>::iterator it = playlines.begin();
 	while(it != playlines.end()){
