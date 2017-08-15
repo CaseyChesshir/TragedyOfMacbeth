@@ -14,9 +14,11 @@ int main(){
     
     Json::Value root;
     Json::Reader reader;
+
+	std::string outputfilename = "output.txt";
     
     ofstream os;
-    os.open("output.txt");
+    os.open(outputfilename);
     
     
     filebuf fb;
@@ -111,7 +113,7 @@ int main(){
         os << "  " << (*i).second << endl;
     }
     
-    cout << "simulation written to output.txt. about to return" << endl;
+    cout << "simulation written to " << outputfilename << " about to return" << endl;
 
     return 0;
 }
