@@ -8,3 +8,6 @@ obj/%.o: src/%.cpp
 
 clean:
 	rm obj/* TragedyOfMacbeth
+
+test:
+	./TragedyOfMacbeth
