@@ -17,9 +17,11 @@ using namespace std;
  public:
  	Character(string name, vector<string> &playlines);
 	~Character();
+	bool ofWomanBorn;
 	string name;
 	vector<string> lines;
 	void speak();
+	void killMacbeth(Character macbeth);
  };
 
  #endif

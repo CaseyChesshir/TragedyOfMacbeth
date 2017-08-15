@@ -3,6 +3,8 @@
 #include "Character.hpp"
 
 class King: public Character{
-	
+	public:
 };
 #endif
+
+
