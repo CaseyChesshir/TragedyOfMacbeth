@@ -1,6 +1,4 @@
-language: 
-	c++
+language: c++
 
-after_success:
-	make clean
+after_success: make clean
 
